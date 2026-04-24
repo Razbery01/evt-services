@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVT Services | Automatic Transmission Specialists in Ballito</title>
+    <meta name="description" content="EVT Services — Ballito's trusted automatic transmission specialists. Expert diagnostics, repairs, servicing and rebuilds. 5-star rated. Call 060 974 2055.">
+    <meta name="keywords" content="transmission repair Ballito, automatic transmission specialist KZN, gearbox repair Umhlali, transmission service North Coast, EVT Services">
+    <meta property="og:title" content="EVT Services | Automatic Transmission Specialists">
+    <meta property="og:description" content="Ballito's 5-star rated automatic transmission experts. Diagnostics, repairs, rebuilds.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #FFD60A;
+            --dark-yellow: #E6BE00;
+            --bright-yellow: #FFEB3B;
+            --black: #0F0F0F;
+            --dark: #171717;
+            --charcoal: #1A1A1A;
+            --dark-gray: #222222;
+            --medium-gray: #2E2E2E;
+            --border: #333333;
+            --light-gray: #B0B0B0;
+            --muted-gray: #888888;
+            --white: #FFFFFF;
+            --off-white: #F5F5F5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 214, 10, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 15, 0.96);
+            box-shadow: 0 4px 30px rgba(255, 214, 10, 0.08);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand img {
+            height: 52px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--white);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--yellow);
+            color: var(--white) !important;
+            padding: 11px 22px;
+            border-radius: 6px;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 14px rgba(255, 214, 10, 0.3);
+        }
+
+        .nav-cta:hover {
+            background: var(--dark-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 214, 10, 0.45);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1001;
+        }
+
+        .burger span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 20px 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6d7fa?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%) contrast(1.05) brightness(0.85);
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.88) 0%, rgba(26, 26, 26, 0.75) 50%, rgba(34, 34, 34, 0.65) 100%);
+        }
+
+        .hero-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 214, 10, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 214, 10, 0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 214, 10, 0.12);
+            border: 1px solid rgba(255, 214, 10, 0.4);
+            border-radius: 100px;
+            margin-bottom: 24px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--bright-yellow);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--yellow);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(255, 214, 10, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--yellow), var(--bright-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero h1 .break {
+            display: block;
+        }
+
+        .hero .subhead {
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            color: var(--off-white);
+            margin-bottom: 36px;
+            line-height: 1.65;
+            max-width: 640px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-stat-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--yellow);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--light-gray);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .hero-stat-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(255, 214, 10, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 214, 10, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe57;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--yellow);
+            color: var(--yellow);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+            opacity: 0.6;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 22px;
+            height: 22px;
+            border-right: 2px solid var(--yellow);
+            border-bottom: 2px solid var(--yellow);
+            transform: rotate(45deg);
+        }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            background: var(--dark);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 0;
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: var(--off-white);
+        }
+
+        .trust-item svg {
+            color: var(--yellow);
+            flex-shrink: 0;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 100px 0;
+            background: var(--dark);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--yellow);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 14px;
+            position: relative;
+            padding: 0 24px;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 16px;
+            height: 1px;
+            background: var(--yellow);
+        }
+
+        .section-tag::before { left: 0; }
+        .section-tag::after { right: 0; }
+
+        .section-header h2 {
+            font-size: clamp(1.9rem, 4.5vw, 3rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .section-header p {
+            color: var(--light-gray);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 36px 28px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--yellow), var(--bright-yellow));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 214, 10, 0.08) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 214, 10, 0.35);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(255, 214, 10, 0.15), rgba(255, 166, 48, 0.08));
+            border: 1px solid rgba(255, 214, 10, 0.25);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 100px 0;
+            background: var(--black);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.3) 0%, rgba(255, 214, 10, 0.15) 100%);
+        }
+
+        .about-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255, 214, 10, 0.25);
+            border-radius: 12px;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: linear-gradient(135deg, var(--yellow), var(--dark-yellow));
+            color: var(--white);
+            padding: 24px 28px;
+            border-radius: 12px;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 0 20px 40px rgba(255, 214, 10, 0.3);
+        }
+
+        .about-badge .number {
+            font-size: 2.6rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .about-badge .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .about-content .section-tag {
+            padding-left: 0;
+        }
+
+        .about-content .section-tag::before { display: none; }
+
+        .about-content h2 {
+            font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            line-height: 1.15;
+        }
+
+        .about-content p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .about-feature .check {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, rgba(255, 214, 10, 0.25), rgba(255, 166, 48, 0.1));
+            border: 1px solid rgba(255, 214, 10, 0.35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--yellow);
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-us {
+            padding: 100px 0;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 214, 10, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            text-align: left;
+            padding: 36px 28px;
+            background: var(--dark-gray);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 214, 10, 0.3);
+        }
+
+        .why-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--yellow), var(--bright-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 18px;
+            display: inline-block;
+        }
+
+        .why-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.6px;
+        }
+
+        .why-card p {
+            color: var(--light-gray);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--dark-yellow) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="g" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23g)"/></svg>');
+        }
+
+        .cta-banner-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: var(--white);
+            line-height: 1.15;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .cta-banner-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-banner .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .cta-banner .btn-primary:hover {
+            background: var(--dark);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 100px 0;
+            background: var(--black);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(255, 214, 10, 0.15), rgba(255, 166, 48, 0.08));
+            border: 1px solid rgba(255, 214, 10, 0.25);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text strong {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--light-gray);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .contact-item-text span,
+        .contact-item-text a {
+            font-size: 1.05rem;
+            color: var(--white);
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-item-text a:hover {
+            color: var(--yellow);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .social-link {
+            width: 46px;
+            height: 46px;
+            background: var(--dark-gray);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 214, 10, 0.3);
+        }
+
+        .contact-form {
+            background: var(--dark-gray);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--yellow), var(--bright-yellow));
+        }
+
+        .contact-form h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .contact-form .form-subhead {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            color: var(--light-gray);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--yellow);
+            box-shadow: 0 0 0 3px rgba(255, 214, 10, 0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--yellow);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 214, 10, 0.3);
+        }
+
+        .form-submit:hover {
+            background: var(--dark-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 214, 10, 0.45);
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulseWhatsapp 2.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            border-top: 1px solid var(--border);
+            padding: 50px 0 24px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            color: var(--light-gray);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul a {
+            color: var(--light-gray);
+            font-size: 0.92rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p,
+        .footer-credit {
+            color: var(--light-gray);
+            font-size: 0.85rem;
+        }
+
+        .footer-credit a {
+            color: var(--yellow);
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-credit a:hover {
+            opacity: 0.8;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0) rotate(45deg);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px) rotate(45deg);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px) rotate(45deg);
+            }
+        }
+
+        .scroll-indicator span {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 214, 10, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 214, 10, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 214, 10, 0); }
+        }
+
+        @keyframes pulseWhatsapp {
+            0% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 18px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .about-grid,
+            .contact-grid,
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-badge {
+                bottom: -12px;
+                right: 16px;
+                padding: 18px 20px;
+            }
+
+            .about-badge .number { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                justify-content: center;
+                gap: 28px;
+                padding: 40px;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(255, 214, 10, 0.25);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .nav-brand img {
+                height: 44px;
+            }
+
+            .hero {
+                padding: 110px 16px 80px;
+                align-items: center;
+                text-align: left;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .hero-stat-divider {
+                display: none;
+            }
+
+            .hero-stat-num {
+                font-size: 1.6rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 28px 22px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                width: 52px;
+                height: 52px;
+                bottom: 18px;
+                right: 18px;
+            }
+
+            .hero-buttons .btn {
+                flex: 1 1 auto;
+                min-width: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services, .about, .why-us, .contact { padding: 70px 0; }
+            .section-header { margin-bottom: 44px; }
+            .trust-items { gap: 14px; }
+            .trust-item { font-size: 0.75rem; }
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 998;
+            backdrop-filter: blur(4px);
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#home" class="nav-brand">
+                <img src="Logo.jpg" alt="EVT Services - We Repair All Automatic Transmissions">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:0609742055" class="nav-cta">Call Now</a></li>
+            </ul>
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                Ballito's #1 Rated Transmission Specialists
+            </div>
+            <h1>
+                <span class="break">We Repair All</span>
+                <span class="highlight">Automatic</span>
+                <span class="break">Transmissions</span>
+            </h1>
+            <p class="subhead">From precision diagnostics to full rebuilds — we keep your gearbox shifting smoothly. Trusted by Ballito drivers with a perfect 5-star rating on Google.</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">5.0</div>
+                    <div class="hero-stat-label">Google<br>Rating</div>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">20+</div>
+                    <div class="hero-stat-label">5-Star<br>Reviews</div>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">100%</div>
+                    <div class="hero-stat-label">Quality<br>Guaranteed</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="https://wa.me/27609742055?text=Hi%20EVT%20Services%2C%20I%27d%20like%20to%20enquire%20about%20a%20transmission%20service." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                    Chat on WhatsApp
+                </a>
+                <a href="tel:0609742055" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    060 974 2055
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    5-Star Rated
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Workmanship Guaranteed
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Fast Turnaround
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    Trusted Since Day One
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">What We Do</span>
+                <h2>Transmission Services</h2>
+                <p>Precision workmanship and advanced diagnostics to keep your automatic gearbox shifting flawlessly — routine service, complex repair, or a full rebuild.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <h3>Automatic Transmission Repairs</h3>
+                    <p>Complete diagnosis and repair of automatic transmission faults — slipping gears, rough shifts, overheating and no-drive issues handled with precision.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Full Transmission Rebuilds</h3>
+                    <p>In-depth strip-down, inspection and rebuild using quality parts. We restore your gearbox to factory spec — or better — for long-term reliability.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <path d="m8 11 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Advanced Diagnostics</h3>
+                    <p>Computer-based diagnostics to accurately pinpoint transmission issues the first time — saving you time, money and guesswork.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                        </svg>
+                    </div>
+                    <h3>Routine Transmission Servicing</h3>
+                    <p>Scheduled fluid and filter changes to extend gearbox life and performance. The single best way to avoid costly repairs down the line.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 2v4"/><path d="M16 2v4"/>
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <path d="M3 10h18"/>
+                        </svg>
+                    </div>
+                    <h3>Torque Converter Repairs</h3>
+                    <p>Specialist torque converter repair and replacement. We fix shuddering, slipping and lock-up issues to restore smooth power delivery.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+                        </svg>
+                    </div>
+                    <h3>Transmission Fluid Flush</h3>
+                    <p>Complete transmission fluid exchange using correct specification fluids. Removes contaminants and keeps internal components cool and protected.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 13V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7"/>
+                            <path d="m4 13 2.5-5h11L20 13"/>
+                            <path d="M6 13v3a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-3"/>
+                            <path d="M14 13v3a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-3"/>
+                        </svg>
+                    </div>
+                    <h3>CV Joint & Drivetrain</h3>
+                    <p>Drivetrain diagnostics and CV joint repairs. We handle the complete power delivery system from gearbox to wheels.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Courtesy Pickup & Delivery</h3>
+                    <p>Can't get your vehicle to us? Ask about our local pickup and drop-off options to make getting your transmission serviced as easy as possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-in">
+                    <div class="about-image-wrapper"></div>
+                    <div class="about-badge">
+                        <span class="number">5.0★</span>
+                        <span class="label">Google Rating</span>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <span class="section-tag">About Us</span>
+                    <h2>Ballito's Trusted Transmission Specialists</h2>
+                    <p>EVT Services is a dedicated transmission workshop based on the R102 in Umhlali, Ballito. We specialise exclusively in automatic transmissions — because when you focus on one thing, you do it better than anyone else.</p>
+                    <p>Our skilled technicians combine decades of experience with modern diagnostic equipment to deliver reliable, high-quality repairs every time. From routine fluid changes to complex rebuilds, we treat every vehicle like it's our own.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="check">&#10003;</span>
+                            Specialist Workshop
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">&#10003;</span>
+                            Advanced Diagnostics
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">&#10003;</span>
+                            Honest Pricing
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">&#10003;</span>
+                            Quality Parts
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">&#10003;</span>
+                            Workmanship Warranty
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">&#10003;</span>
+                            5-Star Customer Service
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>The EVT Difference</h2>
+                <p>We don't do general mechanical work — transmissions are our whole world. That focus is the reason Ballito drivers trust us with their most complex repairs.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-number">01</div>
+                    <h3>Transmission Specialists</h3>
+                    <p>Automatic transmissions are all we do — day in, day out. That focus means faster diagnosis and repairs done right the first time.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">02</div>
+                    <h3>Precision Workmanship</h3>
+                    <p>Advanced technology combined with meticulous attention to detail. Every rebuild and repair is done to exacting standards.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">03</div>
+                    <h3>Honest Quotes</h3>
+                    <p>We inspect, diagnose and explain before any work starts. No hidden costs, no surprises — just a clear plan and fair pricing.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">04</div>
+                    <h3>Customer Focused</h3>
+                    <p>A perfect 5.0★ Google rating didn't happen by accident. We earn it on every job by putting customer satisfaction first.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="cta-banner-content">
+            <h2>Gearbox Giving You Trouble?</h2>
+            <p>Slipping gears, rough shifts, strange noises? Don't wait until it fails completely. Get a professional diagnosis today and save on costly repairs.</p>
+            <div class="cta-banner-buttons">
+                <a href="tel:0609742055" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call 060 974 2055
+                </a>
+                <a href="https://wa.me/27609742055?text=Hi%20EVT%20Services%2C%20I%27m%20experiencing%20transmission%20issues%20and%20need%20a%20quote." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: white;">
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Contact EVT Services</h2>
+                <p>Ready to book your service or need a quote? Reach out — we respond fast.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>Phone</strong>
+                            <a href="tel:0609742055">060 974 2055</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/27609742055" target="_blank" rel="noopener noreferrer">Chat with us instantly</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>Location</strong>
+                            <span>R102, Umhlali, Ballito, 4390</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong>Business Hours</strong>
+                            <span>Mon – Fri: 8:00am – 4:30pm<br>Sat: By Appointment</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.facebook.com/p/EVT-Services-61576335570465/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://wa.me/27609742055" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="tel:0609742055" class="social-link" aria-label="Phone">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Request a Quote</h3>
+                    <p class="form-subhead">Tell us about your transmission issue and we'll get back to you quickly.</p>
+                    <form id="contactForm" action="https://formsubmit.co/evtservices.ballito@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New enquiry from EVT Services website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="#">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="060 000 0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Make &amp; Model</label>
+                            <input type="text" id="vehicle" name="vehicle" placeholder="e.g. Toyota Fortuner 2018">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Describe the Issue</label>
+                            <textarea id="message" name="message" placeholder="Slipping gears, hard shifts, warning lights..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Send Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/27609742055?text=Hi%20EVT%20Services%2C%20I%27d%20like%20to%20enquire%20about%20a%20transmission%20service." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="Logo.jpg" alt="EVT Services" style="height: 70px; width: auto;">
+                    </div>
+                    <p>Ballito's trusted automatic transmission specialists. Precision diagnostics, quality rebuilds and honest service — we repair all automatic transmissions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="tel:0609742055">060 974 2055</a></li>
+                        <li><a href="https://wa.me/27609742055" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+                        <li><a href="https://www.facebook.com/p/EVT-Services-61576335570465/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li>R102, Umhlali, Ballito</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EVT Services. All rights reserved.</p>
+                <span class="footer-credit">Website by <a href="https://keep-hosting.netlify.app" target="_blank" rel="noopener noreferrer">Keep Hosting</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleNav() {
+            burger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burger.addEventListener('click', toggleNav);
+        navOverlay.addEventListener('click', toggleNav);
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    toggleNav();
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
