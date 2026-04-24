@@ -623,7 +623,7 @@
             border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 4/5;
-            background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80');
+            background-image: url('img-mechanic.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -720,6 +720,95 @@
             font-size: 0.75rem;
             flex-shrink: 0;
             font-weight: 700;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            padding: 100px 0;
+            background: var(--black);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: repeat(2, 220px);
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item.gallery-large {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 55%, transparent 100%);
+            opacity: 0.85;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 22px;
+            z-index: 2;
+            transform: translateY(6px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-caption h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.85rem;
+            color: var(--yellow);
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--yellow);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover .gallery-caption p {
+            opacity: 1;
         }
 
         /* ===== WHY CHOOSE US ===== */
@@ -1280,7 +1369,19 @@
         }
 
         @media (max-width: 480px) {
-            .services, .about, .why-us, .contact { padding: 70px 0; }
+            .services, .about, .why-us, .gallery, .contact { padding: 70px 0; }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 180px 180px 180px;
+            }
+            .gallery-item.gallery-large {
+                grid-column: span 2;
+                grid-row: span 1;
+                min-height: 240px;
+            }
+            .gallery-caption p {
+                opacity: 1;
+            }
             .section-header { margin-bottom: 44px; }
             .trust-items { gap: 14px; }
             .trust-item { font-size: 0.75rem; }
@@ -1533,6 +1634,47 @@
                             <span class="check">&#10003;</span>
                             5-Star Customer Service
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">In The Workshop</span>
+                <h2>The Work We Do</h2>
+                <p>A look inside the EVT workshop — precision transmission work, genuine parts, and meticulous attention to every detail.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in gallery-large">
+                    <img src="img-transmission.jpg" alt="Automatic transmission cutaway view" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Transmission Rebuilds</h4>
+                        <p>Precision gearbox rebuilds to factory spec</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="img-mechanic.jpg" alt="Technician working on transmission" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Expert Technicians</h4>
+                        <p>Skilled hands on every job</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="img-oil.jpg" alt="Transmission fluid service" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Fluid Services</h4>
+                        <p>Correct-spec fluid every time</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="img-brakes.jpg" alt="Brake and drivetrain work" loading="lazy">
+                    <div class="gallery-caption">
+                        <h4>Drivetrain & Brakes</h4>
+                        <p>Complete power & stopping systems</p>
                     </div>
                 </div>
             </div>
