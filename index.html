@@ -23,16 +23,20 @@
             --yellow: #FFD60A;
             --dark-yellow: #E6BE00;
             --bright-yellow: #FFEB3B;
-            --black: #0F0F0F;
-            --dark: #171717;
-            --charcoal: #1A1A1A;
-            --dark-gray: #222222;
-            --medium-gray: #2E2E2E;
-            --border: #333333;
-            --light-gray: #B0B0B0;
-            --muted-gray: #888888;
+            --silver: #C0C0C0;
+            --light-silver: #D8D8D8;
+            --dark-silver: #A8A8A8;
+            --black: #696969;
+            --dark: #5F5F5F;
+            --charcoal: #555555;
+            --dark-gray: #787878;
+            --medium-gray: #848484;
+            --border: #8A8A8A;
+            --light-gray: #E8E8E8;
+            --muted-gray: #D0D0D0;
             --white: #FFFFFF;
             --off-white: #F5F5F5;
+            --text-dark: #1A1A1A;
         }
 
         html {
@@ -75,16 +79,16 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(15, 15, 15, 0.75);
+            background: rgba(192, 192, 192, 0.92);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255, 214, 10, 0.15);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         .navbar.scrolled {
-            background: rgba(15, 15, 15, 0.96);
-            box-shadow: 0 4px 30px rgba(255, 214, 10, 0.08);
+            background: rgba(192, 192, 192, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
         }
 
         .nav-content {
@@ -94,7 +98,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 72px;
+            height: 110px;
         }
 
         .nav-brand {
@@ -104,9 +108,12 @@
         }
 
         .nav-brand img {
-            height: 52px;
+            height: 100px;
             width: auto;
             display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
         }
 
         .nav-links {
@@ -118,11 +125,11 @@
 
         .nav-links a {
             font-family: 'Inter', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            color: var(--white);
+            color: var(--text-dark);
             transition: color 0.3s ease;
             position: relative;
         }
@@ -134,12 +141,13 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--yellow);
+            background: var(--text-dark);
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--yellow);
+            color: var(--text-dark);
+            opacity: 0.7;
         }
 
         .nav-links a:hover::after {
@@ -147,18 +155,21 @@
         }
 
         .nav-cta {
-            background: var(--yellow);
-            color: var(--white) !important;
-            padding: 11px 22px;
+            background: var(--text-dark);
+            color: var(--yellow) !important;
+            padding: 13px 26px;
             border-radius: 6px;
             transition: all 0.3s ease !important;
-            box-shadow: 0 4px 14px rgba(255, 214, 10, 0.3);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            font-weight: 700 !important;
         }
 
         .nav-cta:hover {
-            background: var(--dark-yellow);
+            background: var(--yellow);
+            color: var(--text-dark) !important;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 214, 10, 0.45);
+            box-shadow: 0 8px 20px rgba(255, 214, 10, 0.5);
+            opacity: 1 !important;
         }
 
         .nav-cta::after {
@@ -175,9 +186,10 @@
 
         .burger span {
             width: 28px;
-            height: 2px;
-            background: var(--white);
+            height: 3px;
+            background: var(--text-dark);
             transition: all 0.3s ease;
+            border-radius: 2px;
         }
 
         .burger.active span:nth-child(1) {
@@ -200,7 +212,7 @@
             justify-content: flex-start;
             position: relative;
             overflow: hidden;
-            padding: 120px 20px 80px;
+            padding: 150px 20px 80px;
         }
 
         .hero-bg {
@@ -1199,13 +1211,13 @@
                 width: 80%;
                 max-width: 320px;
                 height: 100vh;
-                background: var(--dark);
+                background: var(--silver);
                 flex-direction: column;
                 justify-content: center;
                 gap: 28px;
                 padding: 40px;
                 transition: right 0.3s ease;
-                border-left: 1px solid rgba(255, 214, 10, 0.25);
+                border-left: 3px solid var(--yellow);
             }
 
             .nav-links.active {
@@ -1217,11 +1229,15 @@
             }
 
             .nav-brand img {
-                height: 44px;
+                height: 78px;
+            }
+
+            .nav-content {
+                height: 92px;
             }
 
             .hero {
-                padding: 110px 16px 80px;
+                padding: 130px 16px 80px;
                 align-items: center;
                 text-align: left;
             }
@@ -1674,7 +1690,7 @@
             <div class="footer-top">
                 <div class="footer-col">
                     <div class="footer-brand">
-                        <img src="Logo.jpg" alt="EVT Services" style="height: 70px; width: auto;">
+                        <img src="Logo.jpg" alt="EVT Services" style="height: 140px; width: auto; border-radius: 8px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
                     </div>
                     <p>Ballito's trusted automatic transmission specialists. Precision diagnostics, quality rebuilds and honest service — we repair all automatic transmissions.</p>
                 </div>
